@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: antiquewhite;
+}
+a,
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: rgb(73, 2, 88);
+  background: radial-gradient(
+    circle,
+    rgb(135, 4, 161) 0%,
+    rgba(67, 19, 65, 1) 100%
+  );
+}
+:root {
+  --background-color: #3a0030;
+}
