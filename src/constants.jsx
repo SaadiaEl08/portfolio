@@ -26,7 +26,7 @@ export const navItems = [
     {
         id: 4,
         title: "Cv/Resume",
-        path: "/contact",
+        path: "/cv",
         icon:"fa-solid fa-file"
     },
 ];
