@@ -19,12 +19,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen min-w-screen flex flex-col justify-center items-center  p-2">
-      <div className="flex flex-col justify-center items-center gap-3">
+    <div className=" min-h-screen min-w-screen flex flex-col justify-center items-center  p-2">
+      <div className=" flex flex-col justify-center items-center gap-6">
         <img src="src/assets/personal_photo.jpg" alt="personal photo" className="w-40  rounded-full  img-drop-shadow shadow-[var(--shadow)] " />
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="text-lg font-bold">Hello <i className="fa-solid fa-hand text-yellow-400 animate-wave"></i></h1>
-          <p className="text-wrap text-lg text-center">
+        <div className="flex flex-col justify-center items-center max-w-[80%]">
+          <h1 className="text-2xl font-bold">Hello <i className="fa-solid fa-hand text-yellow-400 animate-wave"></i></h1>
+          <p className="text-wrap text-3xl text-center">
             I am <span className="text-blue-300 font-bold">Saadia</span>, a
             <span className="font-bold text-blue-300 ">{jobs[jobIndex]}</span> Developer.
             based in Morocco

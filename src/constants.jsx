@@ -24,7 +24,7 @@ export const navItems = [
         icon:"fa-solid fa-envelope"
     },
     {
-        id: 4,
+        id: 5,
         title: "Cv/Resume",
         path: "/cv",
         icon:"fa-solid fa-file"

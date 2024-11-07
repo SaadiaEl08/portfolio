@@ -4,7 +4,6 @@ import { navItems } from './../constants';
 
 const NavBar = () => {
   const currentPage = useLocation().pathname;
-  console.log(currentPage);
   return (
     <nav className="border-2 rounded-full bg-[var(--background-color)]  w-fit h-full flex flex-col justify-center items-center p-2">
       <ul className="flex flex-col gap-2 justify-center items-center">
