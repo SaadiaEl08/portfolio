@@ -5,12 +5,12 @@ import icon from '../assets/morocco.svg';
 
 const Home = () => {
   const [jobIndex, setJobIndex] = useState(0);
-  const downloadCv=()=>{
+  const downloadCv = () => {
     const link = document.createElement('a');
-    link.href = 'src/assets/Saadia_El_Achguir_CV.pdf';
+    link.href = `src/assets/Saadia_El_Achguir_CV.pdf`;
     link.download = 'Saadia_El_Achguir_CV.pdf';
     link.click();
-  }
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setJobIndex((prevIndex) => (prevIndex + 1) % jobs.length);
