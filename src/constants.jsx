@@ -30,3 +30,6 @@ export const navItems = [
         icon:"fa-solid fa-file"
     },
 ];
+
+export const skills = ['HTML','CSS','Javascript','React','Tailwind','Bootstrap','Nodejs','Express','MongoDB'];
+export const jobs = [' Front-end ',' Back-end ',' Full-stack '];
