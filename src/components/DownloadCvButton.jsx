@@ -6,7 +6,7 @@ const DownloadCvButton = () => {
         link.click();
       };
     return (
-        <button onClick={downloadCv} className="CTA-btn border-2">CV/Resume <i className="fa-solid fa-download "></i></button>
+        <button onClick={downloadCv} className="CTA-btn border-2 2xl:text-3xl">CV/Resume <i className="fa-solid fa-download "></i></button>
 
     );
 };
