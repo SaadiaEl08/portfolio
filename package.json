@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "homepage": "https://SaadiaEl08.github.io/portfolio",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
 
   "scripts": {
     "dev": "vite",
