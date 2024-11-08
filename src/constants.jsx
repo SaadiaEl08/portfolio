@@ -61,3 +61,31 @@ export const skills = {
 };
 export const jobs = [' Front-end ', ' Back-end ', ' Full-stack '];
 
+export const contact = [
+    {
+        id: 1,
+        name: "email",
+        image: "src/assets/contact/gmail.png",
+        link: "mailto:6HcU7@example.com"
+    },
+    {
+        id: 2,
+        name: "linkedin",
+        image: "src/assets/contact/linkedin.png",
+        link: "https://www.linkedin.com/in/saadia-el-achguir"
+    },
+    {
+        id: 4,
+        name: "Phone",
+        image: "src/assets/contact/phone.png",
+        link: "tel:010-0000-0000"
+
+    },
+    {
+        id: 3,
+        name: "github",
+        image: "src/assets/contact/github.png",
+        link: "https://github.com/SaadiaEla"
+    }
+
+];
