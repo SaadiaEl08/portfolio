@@ -6,7 +6,7 @@ const App = () => {
       <aside className="w-fit h-fit fixed sm:left-5 sm:top-40">
         <NavBar />
       </aside>
-      <section className="mt-16 sm:mt-0 sm:ms-20 w-full px-3">
+      <section className=" mt-16 sm:mt-0 sm:ms-20 w-fit px-3">
         <Outlet />
       </section>
     </main>

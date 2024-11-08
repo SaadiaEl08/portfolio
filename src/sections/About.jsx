@@ -3,7 +3,7 @@ import PersonalImg from './../components/PersonalImg';
 const About = () => {
     return (
         <div className="min-h-screen min-w-screen flex flex-col justify-center items-center gap-2 2xl:gap-6">
-            <PersonalImg className="w-[70px] lg:w-[100px] xl:w-[200px] 2xl:w-[300px] " />
+            <PersonalImg className="w-[70px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
             <h2 className="text-2xl font-bold text-center 2xl:text-5xl">About Me</h2>
             <p className='text-sm sm:text-center lg:text-lg 2xl:text-2xl text-slate-200'>
                 I&apos;m a full-stack developer passionate about React, Laravel and web development.
