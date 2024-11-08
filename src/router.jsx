@@ -3,6 +3,7 @@ import App from "./App";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
+import CV from "./sections/CV";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
                 {
                     path: "/contact",
                     element: <Contact />
+                },
+                {
+                    path: "/cv",
+                    element: <CV />
                 },
                 {
                     path: "*",

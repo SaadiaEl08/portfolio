@@ -3,10 +3,10 @@ import { skills } from '../constants';
 import PersonalImg from './../components/PersonalImg';
 const About = () => {
     return (
-        <div className="min-h-screen min-w-screen flex flex-col justify-center items-center gap-2 2xl:gap-6">
-            <PersonalImg className="w-[70px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
+        <div className="min-w-screen flex flex-col justify-center items-center gap-2 pt-2 sm:min-h-screen md:text-lg 2xl:gap-6">
+            <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
             <HeroHeader text="About Me" />
-            <p className='text-sm sm:text-center lg:text-lg 2xl:text-2xl text-slate-200'>
+            <p className='text-sm text-center  text-slate-200 2xl:text-2xl'>
                 I&apos;m a full-stack developer passionate about React, Laravel and web development.
                 <br /> I thrive on learning new things and love the challenge of solving bugs and finding the best solutions.
                 <br /> The blend of creativity, logic, and continuous discovery drives my excitement for building impactful applications.
