@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --background-color: rgb(8, 104, 196);
+  --shadow:rgb(166, 148, 255)
+}
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +22,7 @@ li {
   color: rgb(166, 148, 255);
 }
 
+
 #canvas {
   position:fixed;
   width: 100vw;
@@ -29,10 +35,7 @@ body {
   background: rgb(73, 2, 88);
   background: radial-gradient(circle, rgb(8, 104, 196) 0%, rgb(5, 41, 74) 100%);
 }
-:root {
-  --background-color: rgb(8, 104, 196);
-  --shadow:rgb(166, 148, 255)
-}
+
 
 .animate-wave {
   animation: wave 1s ease-in-out infinite;
