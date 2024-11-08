@@ -89,3 +89,21 @@ export const contacts = [
     }
 
 ];
+
+export const languages = [
+    {
+        id: 1,
+        code: "eng",
+        name: "English",
+    },
+    {
+        id: 2,
+        code: "ar",
+        name: "العربية",
+    },
+    {
+        id: 3,
+        code: "fr",
+        name: "French",
+    }
+];
