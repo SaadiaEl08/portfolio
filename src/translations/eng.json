@@ -30,8 +30,5 @@
     "frontEnd":"Front-end",
     "backEnd":"Back-end",
     "databases":"Databases",
-    "tools":"Tools",
-
-    "change_language":"Change Language",
-    "current_language":"English"
+    "tools":"Tools"
 }

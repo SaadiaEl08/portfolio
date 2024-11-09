@@ -3,18 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { languages, navItems } from './../constants';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
-import { t } from 'i18next';
 
 
 const NavBar = () => {
+  const { t } = useTranslation();
+
   const currentLanguageCode = useSelector(state => state.language);
   const [currentLanguage, setCurrentLanguage] = useState(languages.find(language => language.code === currentLanguageCode));
   const dispatch = useDispatch();
   useEffect(() => {
     setCurrentLanguage(languages.find(language => language.code === currentLanguageCode));
-    document.body.style.direction = currentLanguageCode == "ar" ? "rtl" : "ltr";
     i18n.changeLanguage(currentLanguageCode);
+
   }, [currentLanguageCode]);
 
   const changeLanguage = () => {

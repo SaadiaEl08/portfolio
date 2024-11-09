@@ -1,10 +1,12 @@
-import { t } from "i18next";
 import ContactFormElement from "../components/ContactFormElement";
 import HeroHeader from "../components/heroHeader";
 import { contacts } from "../constants";
 import PersonalImg from './../components/PersonalImg';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="md:text-lg sm:min-h-screen flex flex-col justify-center items-center gap-1 2xl:gap-6 p-2">
             <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />

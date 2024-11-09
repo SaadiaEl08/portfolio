@@ -1,6 +1,8 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const DownloadCvButton = () => {
+    const { t } = useTranslation();
+
     const downloadCv = () => {
         const link = document.createElement('a');
         link.href = `src/assets/Saadia_El_Achguir_CV.pdf`;
