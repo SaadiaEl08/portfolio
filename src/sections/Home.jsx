@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (jobRef.current) {
-        jobRef.current.textContent =t(jobs[jobIndex]);
+        jobRef.current.textContent =` ${t(jobs[jobIndex].trim())}`;
         jobIndex = (jobIndex + 1) % jobs.length;
       }
     }, 1500);
@@ -27,7 +27,7 @@ const Home = () => {
         <div className="flex flex-col justify-center items-center max-w-[80%] gap-4">
           <h1 className="text-2xl font-bold 2xl:text-5xl">{t("hello")} <i className="fa-solid fa-hand text-yellow-400 animate-wave"></i></h1>
           <p className="text-wrap text-3xl text-center 2xl:text-4xl">
-          {t("I am")} <span className="text-blue-300 font-bold">{t("Saadia")}</span>, a
+          {t("I am")} <span className="text-blue-300 font-bold">{t("Saadia")}</span>, {t("a")}
             <span className="font-bold text-blue-300 " ref={jobRef}> {t("Front-end")} </span> {t("Developer")}.
             <br /> {t("based in Morocco")}
             <span className="ms-1" style={{ display: 'inline-block', backgroundImage: `url(${icon})`, width: '25px', height: '25px', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', verticalAlign: 'middle' }} />

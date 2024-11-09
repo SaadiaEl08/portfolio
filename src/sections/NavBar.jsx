@@ -4,6 +4,7 @@ import { languages, navItems } from './../constants';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import i18n from '../i18n';
+import { t } from 'i18next';
 
 
 const NavBar = () => {
@@ -32,7 +33,7 @@ const NavBar = () => {
               <i className={`${item.icon} w-5 text-center md:w-8 text-lg md:text-2xl  `} />
               {currentPage == item.path ? <span className='w-5 border bg-white md:w-6 md:border-1'></span> : ''}
             </Link>
-            <span className=' py-1 px-2 text-sm text-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{item.title}</span>
+            <span className=' py-1 px-2 text-sm text-center text-nowrap font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{t(item.title.toLowerCase())}</span>
           </li>
         ))}
         <li className='flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5  md:w-8 overflow-hidden hover:overflow-visible h-8 sm:h-fit'>

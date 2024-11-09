@@ -1,3 +1,5 @@
+import { t } from "i18next";
+
 const DownloadCvButton = () => {
     const downloadCv = () => {
         const link = document.createElement('a');
@@ -6,7 +8,7 @@ const DownloadCvButton = () => {
         link.click();
       };
     return (
-        <button onClick={downloadCv} className="CTA-btn border-2 2xl:text-3xl">CV/Resume <i className="fa-solid fa-download "></i></button>
+        <button onClick={downloadCv} className="CTA-btn border-2 2xl:text-3xl">{t("cv/resume")} <i className="fa-solid fa-download "></i></button>
 
     );
 };

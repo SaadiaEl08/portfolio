@@ -6,7 +6,7 @@ import frTranslation from './translations/fr.json';
 import reducer from './store/reducer';
 import { legacy_createStore } from 'redux';
 
-const store=legacy_createStore(reducer)
+const store = legacy_createStore(reducer);
 i18n
   .use(initReactI18next)
   .init({
@@ -16,11 +16,14 @@ i18n
       fr: { translation: frTranslation }
     },
     lng: store.getState().language,
-    fallbackLng: 'eng', 
+    fallbackLng: 'eng',
     interpolation: {
-      escapeValue: false 
-    }
+      escapeValue: false
+    },
+    missingKeyHandler: (lng, ns, key) => {
+      console.warn(`Missing translation key: ${key} in language: ${lng}`);
+    }, returnEmptyString: true,
   });
- 
+
 
 export default i18n;
