@@ -30,5 +30,7 @@
     "frontEnd":"Front-end",
     "backEnd":"Back-end",
     "databases":"Databases",
-    "tools":"Tools"
+    "tools":"Tools",
+    "requiredField":"this field is required 😁",
+    "invalidEmail":"Invalid email 😁"
 }

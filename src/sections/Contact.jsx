@@ -14,13 +14,13 @@ const Contact = () => {
     const handleChange = (e) => {
         if (e.target.value === "") {
             sendBtnRef.current.disabled = true;
-            setInfosError({ ...infosError, [e.target.name]: "this failed is required 😁" });
+            setInfosError({ ...infosError, [e.target.name]: t("requiredField") });
             return;
         }
         const emailReg = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         if (e.target.name === "email" && !emailReg.test(e.target.value)) {
             sendBtnRef.current.disabled = true;
-            setInfosError({ ...infosError, [e.target.name]: "this failed is not a valid email 😁" });
+            setInfosError({ ...infosError, [e.target.name]: t("invalidEmail") });
             return;
         }
         setInfosError({ ...infosError, [e.target.name]: "" });
