@@ -16,13 +16,13 @@ const NavBar = () => {
   useEffect(() => {
     setCurrentLanguage(languages.find(language => language.code === currentLanguageCode));
     i18n.changeLanguage(currentLanguageCode);
-
   }, [currentLanguageCode]);
 
   const changeLanguage = () => {
     const currentLanguageIndex = languages.findIndex(language => language.code === currentLanguageCode);
     const newLanguageIndex = currentLanguageIndex === languages.length - 1 ? 0 : currentLanguageIndex + 1;
     const newLanguageCode = languages[newLanguageIndex].code;
+    localStorage.setItem("language_code", newLanguageCode);
     dispatch({ type: 'SET_LANGUAGE', payload: newLanguageCode });
   };
   const currentPage = useLocation().pathname;

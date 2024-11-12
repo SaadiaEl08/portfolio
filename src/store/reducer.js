@@ -1,5 +1,5 @@
 const initialState = {
-    language: 'eng',
+    language: localStorage.getItem("language_code") != null ? localStorage.getItem("language_code") : navigator.language == "en" ? "eng" : navigator.language
 };
 
 const reducer = (state = initialState, action) => {
