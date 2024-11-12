@@ -2,17 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --background-color: rgb(8, 104, 196);
-  --shadow:rgb(166, 148, 255)
+  --shadow: rgb(166, 148, 255);
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: antiquewhite;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 a,
 ul,
@@ -22,9 +21,8 @@ li {
   color: rgb(166, 148, 255);
 }
 
-
 #canvas {
-  position:fixed;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -35,7 +33,6 @@ body {
   background: rgb(73, 2, 88);
   background: radial-gradient(circle, rgb(8, 104, 196) 0%, rgb(5, 41, 74) 100%);
 }
-
 
 .animate-wave {
   animation: wave 1s ease-in-out infinite;
@@ -59,11 +56,14 @@ body {
     background-color: var(--background-color);
     padding: 6px 16px;
     border-radius: 20px;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
-  .CTA-btn:hover{
+  .CTA-btn:hover {
     transform: scale(1.05);
-    box-shadow :0 0 0.75rem var(--shadow);
-
+    box-shadow: 0 0 0.75rem var(--shadow);
+  }
+  .CTA-btn:disabled {
+    transform: none;
+    box-shadow: none;
   }
 }

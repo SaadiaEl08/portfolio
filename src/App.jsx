@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from './sections/NavBar';
 import { useSelector } from 'react-redux';
-import i18n from './i18n';
 import { useEffect } from 'react';
 const App = () => {
   const currentLanguageCode = useSelector(state => state.language);
