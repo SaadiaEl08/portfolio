@@ -6,6 +6,10 @@ import PersonalImg from './../components/PersonalImg';
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
 import { useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import i18next from "i18next";
+
 
 const Contact = () => {
     const { t } = useTranslation();
@@ -16,19 +20,19 @@ const Contact = () => {
     const backend_port = useSelector(state => state.BACKEND_PORT);
 
     const handleChange = (e) => {
+        setInfos({ ...infos, [e.target.name]: e.target.value });
         if (e.target.value === "") {
             sendBtnRef.current.disabled = true;
-            setInfosError({ ...infosError, [e.target.name]: t("requiredField") });
+            setInfosError({ ...infosError, [e.target.name]: "requiredField" });
             return;
         }
         const emailReg = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         if (e.target.name === "email" && !emailReg.test(e.target.value)) {
             sendBtnRef.current.disabled = true;
-            setInfosError({ ...infosError, [e.target.name]: t("invalidEmail") });
+            setInfosError({ ...infosError, [e.target.name]: "invalidEmail" });
             return;
         }
         setInfosError({ ...infosError, [e.target.name]: "" });
-        setInfos({ ...infos, [e.target.name]: e.target.value });
 
     };
     useEffect(() => {
@@ -44,13 +48,28 @@ const Contact = () => {
             await axios.post(`http://localhost:${backend_port}/send_email`, infos)
                 .then(res => {
                     console.log(res);
-                    setIsSending(false);
                     setInfos({ name: "", email: "", message: "" });
+                    toast.success(`${t("EmailSentSuccess")}`, {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        theme: "light",
+                        pauseOnHover: true,
+                    });
                 }
                 ).catch(error => {
                     console.error('Error sending email:', error);
-
+                    toast.error(`${t("EmailNotSent")}`, {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        theme: "light",
+                        pauseOnHover: true,
+                    });
                 });
+            setIsSending(false);
         } catch (error) {
             console.error('Error sending email:', error);
             alert('Failed to send email.');
@@ -63,16 +82,16 @@ const Contact = () => {
             <p className=" text-md w-[80%] text-center">{t("contactText")}</p>
             <div className=" w-full md:max-w-[70%]  p-2 flex flex-col justify-center items-start gap-4">
                 <div className="w-full flex gap-2 justify-evenly items-center">
-                    <ContactFormElement label={t("email")} type="email" placeholder={t("enterEmail")} icon="at" onChange={handleChange} name="email" errMessage={infosError.email}  value={infos.email}/>
-                    <ContactFormElement label={t("name")} type="text" placeholder={t("enterName")} icon="user" onChange={handleChange} name="name" errMessage={infosError.name}  value={infos.name}/>
+                    <ContactFormElement label={t("email")} type="email" placeholder={t("enterEmail")} icon="at" onChange={handleChange} name="email" errMessage={t(infosError.email)} value={infos.email} />
+                    <ContactFormElement label={t("name")} type="text" placeholder={t("enterName")} icon="user" onChange={handleChange} name="name" errMessage={t(infosError.name)} value={infos.name} />
                 </div>
                 <div className="w-full gap-1">
-                    <textarea className="p-1 rounded-md outline-none text-black w-full  max-h-[150px]" name="message" id="" cols="20" rows="10" placeholder={t("enterMessage")} onChange={handleChange} value={infos.message}></textarea>
+                    <textarea className="p-1 rounded-md outline-none text-black w-full  max-h-[150px]" name="message" id="" cols="20" rows="10" placeholder={t("enterMessage")} onChange={handleChange} value={t(infos.message)}></textarea>
                     <span className={`err before:content-['*'] text-red-300 ${infosError.message === "" ? "hidden" : "block"} `}>{infosError.message}</span>
                 </div>
 
                 <div className="w-full flex justify-end items-center pe-3" onClick={sendEmail}>
-                    <button ref={sendBtnRef} className="CTA-btn rounded-md border-2 2xl:text-3xl  disabled:cursor-not-allowed disabled:bg-gray-500" disabled={isSending}>
+                    <button ref={sendBtnRef} className="CTA-btn rounded-md border-2 2xl:text-3xl  disabled:cursor-not-allowed disabled:bg-gray-500" disabled={isSending} type="submit">
                         {isSending ?
                             (<> {t("sending")} <i className="fa-solid fa-spinner animate-spin"  ></i></>) :
                             <> {t("send")} < i className="fa-solid fa-paper-plane" ></i></>}
@@ -94,6 +113,8 @@ const Contact = () => {
                     }
                 </div>
             </div>
+            <ToastContainer />
+
         </div >
     );
 };

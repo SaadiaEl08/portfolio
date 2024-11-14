@@ -32,5 +32,8 @@
     "databases":"Databases",
     "tools":"Tools",
     "requiredField":"this field is required 😁",
-    "invalidEmail":"Invalid email 😁"
+    "invalidEmail":"Invalid email 😁",
+    "sending":"sending",
+    "EmailSentSuccess":"Email sent successfully, Thank you for your message 😁" ,
+    "EmailNotSent":"Email not sent, please try again 😁"
 }

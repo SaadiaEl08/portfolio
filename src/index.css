@@ -5,20 +5,20 @@
 :root {
   --background-color: rgb(8, 104, 196);
   --shadow: rgb(166, 148, 255);
+  --color:antiquewhite;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: antiquewhite;
   font-family: "Poppins", sans-serif;
 }
+
 a,
 ul,
 li {
   text-decoration: none;
   list-style: none;
-  color: rgb(166, 148, 255);
 }
 
 #canvas {

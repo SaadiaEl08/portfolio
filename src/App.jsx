@@ -9,7 +9,7 @@ const App = () => {
   }, [currentLanguageCode]);
 
   return (
-    <main className="min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-center justify-between items-center pt-4  sm:pt-0">
+    <main className="min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-center justify-between items-center pt-4  sm:pt-0 text-[var(--color)]">
       <aside className={`w-fit h-fit  fixed ${currentLanguageCode == "ar" ? " sm:right-5":" sm:left-5"} sm:top-40`}>
         <NavBar />
       </aside>

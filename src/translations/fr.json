@@ -32,6 +32,9 @@
   "databases": "Bases de données",
   "tools": "Outils",
   "requiredField":"Ce champ est obligatoire 😁",
-  "invalidEmail":"Email non valide 😁"
+  "invalidEmail":"Email non valide 😁",
+  "sending":"Envoi en cours",
+  "EmailSentSuccess":"Email envoyé avec succès, Merci pour votre message 😁",
+  "EmailNotSent":"Email non envoyé,Merci de reessayer ou me contacter 😁"
 
 }
