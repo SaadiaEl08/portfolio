@@ -5,7 +5,19 @@
 :root {
   --background-color: rgb(8, 104, 196);
   --shadow: rgb(166, 148, 255);
-  --color:antiquewhite;
+  --color: antiquewhite;
+  --input-background: #fff;
+  --input-text-color: black;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --background-color: rgb(8, 56, 102);
+  --shadow: rgb(166, 148, 255);
+  --color: antiquewhite;
+  --input-background: rgb(9, 81, 149);
+  --input-text-color: antiquewhite;
+  
 }
 * {
   margin: 0;
@@ -30,8 +42,8 @@ li {
   z-index: -100;
 }
 body {
-  background: rgb(73, 2, 88);
-  background: radial-gradient(circle, rgb(8, 104, 196) 0%, rgb(5, 41, 74) 100%);
+  background: rgb(73, 2, 88) ;
+  background: radial-gradient(circle, var(--background-color) 0%, rgb(5, 41, 74) 100%);
 }
 
 .animate-wave {

@@ -28,7 +28,7 @@ export const navItems = [
         title: "Cv/Resume",
         path: "/cv",
         icon: "fa-solid fa-file"
-    },
+    }
 ];
 
 export const skills = {

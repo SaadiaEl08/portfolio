@@ -4,3 +4,9 @@ export const SET_LANGUAGE = (language) => {
     };
 
 };
+export const SET_THEME = (isDarkTheme) => {
+    return {
+        type: "SET_THEME",payload: isDarkTheme
+    };
+
+};

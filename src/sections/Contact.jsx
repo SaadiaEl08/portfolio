@@ -8,7 +8,6 @@ import axios from 'axios';
 import { useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import i18next from "i18next";
 
 
 const Contact = () => {
@@ -86,7 +85,7 @@ const Contact = () => {
                     <ContactFormElement label={t("name")} type="text" placeholder={t("enterName")} icon="user" onChange={handleChange} name="name" errMessage={t(infosError.name)} value={infos.name} />
                 </div>
                 <div className="w-full gap-1">
-                    <textarea className="p-1 rounded-md outline-none text-black w-full  max-h-[150px]" name="message" id="" cols="20" rows="10" placeholder={t("enterMessage")} onChange={handleChange} value={t(infos.message)}></textarea>
+                    <textarea className="p-2 rounded-md outline-none text-[var(--input-text-color)] w-full  max-h-[150px] bg-[var(--input-background)]" name="message" id="" cols="20" rows="10" placeholder={t("enterMessage")} onChange={handleChange} value={t(infos.message)}></textarea>
                     <span className={`err before:content-['*'] text-red-300 ${infosError.message === "" ? "hidden" : "block"} `}>{infosError.message}</span>
                 </div>
 

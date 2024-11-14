@@ -5,14 +5,16 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import { SET_THEME } from '../store/Action';
 
 
 const NavBar = () => {
   const { t } = useTranslation();
-
   const currentLanguageCode = useSelector(state => state.language);
   const [currentLanguage, setCurrentLanguage] = useState(languages.find(language => language.code === currentLanguageCode));
+  const isDarkTheme = useSelector(state => state.isDarkTheme);
   const dispatch = useDispatch();
+    
   useEffect(() => {
     setCurrentLanguage(languages.find(language => language.code === currentLanguageCode));
     i18n.changeLanguage(currentLanguageCode);
@@ -25,6 +27,11 @@ const NavBar = () => {
     localStorage.setItem("language_code", newLanguageCode);
     dispatch({ type: 'SET_LANGUAGE', payload: newLanguageCode });
   };
+  const changeTheme = () => {
+    const newTheme=!isDarkTheme
+    localStorage.setItem("isDarkTheme", Number(newTheme));
+    dispatch(SET_THEME(newTheme));
+  };
   const currentPage = useLocation().pathname;
   return (
     <nav className="border-2 rounded-full bg-[var(--background-color)] w-fit h-fit flex flex-col justify-center items-center p-1 z-10">
@@ -35,7 +42,7 @@ const NavBar = () => {
               <i className={`${item.icon} w-5 text-center md:w-8 text-lg md:text-2xl  `} />
               {currentPage == item.path ? <span className='w-5 border bg-white md:w-6 md:border-1'></span> : ''}
             </Link>
-            <span className=' py-1 px-2 text-sm text-center text-nowrap font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{t(item.title.toLowerCase())}</span>
+            <span className='py-1 px-2 text-sm text-center text-nowrap font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{t(item.title.toLowerCase())}</span>
           </li>
         ))}
         <li className='flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5  md:w-8 overflow-hidden hover:overflow-visible h-8 sm:h-fit'>
@@ -43,6 +50,12 @@ const NavBar = () => {
             <i className={`fa-solid fa-globe w-5 text-center md:w-8 text-lg md:text-2xl  `} />
           </button>
           <span className=' py-1 px-2 text-sm text-center align-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{currentLanguage.name}</span>
+        </li>
+        <li className='flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5  md:w-8 overflow-hidden hover:overflow-visible h-8 sm:h-fit'>
+          <button onClick={changeTheme} className='flex flex-col justify-center items-center  '>
+            <i className={`fa-solid fa-${isDarkTheme ? "moon" : "sun text-yellow-400 animation-spin"} w-5 text-center md:w-8 text-lg md:text-2xl  `} />
+          </button>
+          <span className=' py-1 px-2 text-sm text-center align-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{isDarkTheme ? "Dark" : "Light"}</span>
         </li>
       </ul>
     </nav>
