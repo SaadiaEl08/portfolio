@@ -1,4 +1,5 @@
 const initialState = {
+    BACKEND_PORT:5000,
     language: localStorage.getItem("language_code") != null ? localStorage.getItem("language_code") : navigator.language == "en" ? "eng" : navigator.language
 };
 

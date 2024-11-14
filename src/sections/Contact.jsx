@@ -4,12 +4,16 @@ import HeroHeader from "../components/heroHeader";
 import { contacts } from "../constants";
 import PersonalImg from './../components/PersonalImg';
 import { useTranslation } from "react-i18next";
+import axios from 'axios';
+import { useSelector } from "react-redux";
 
 const Contact = () => {
     const { t } = useTranslation();
     const [infos, setInfos] = useState({ name: "", email: "", message: "" });
+    const [isSending, setIsSending] = useState(false);
     const [infosError, setInfosError] = useState({ name: "", email: "", message: "" });
     const sendBtnRef = useRef();
+    const backend_port = useSelector(state => state.BACKEND_PORT);
 
     const handleChange = (e) => {
         if (e.target.value === "") {
@@ -29,33 +33,52 @@ const Contact = () => {
     };
     useEffect(() => {
         let emptyInputNumber = Object.keys(infos).filter((key) => {
-            return infos[key] == "";
+            return infos[key] === "";
         });
-        sendBtnRef.current.disabled = !emptyInputNumber.length == 0;
+        sendBtnRef.current.disabled = emptyInputNumber.length > 0;
     }, [infos]);
-    const send = () => {
-        sendBtnRef.current.disabled = true;
 
+    const sendEmail = async () => {
+        try {
+            setIsSending(true);
+            await axios.post(`http://localhost:${backend_port}/send_email`, infos)
+                .then(res => {
+                    console.log(res);
+                    setIsSending(false);
+                    setInfos({ name: "", email: "", message: "" });
+                }
+                ).catch(error => {
+                    console.error('Error sending email:', error);
+
+                });
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Failed to send email.');
+        }
     };
     return (
-        <div className="md:text-lg sm:min-h-screen flex flex-col justify-center items-center gap-1 2xl:gap-6 p-2">
+        <div className=" flex flex-col justify-center items-center gap-1 sm:min-h-screen md:text-lg 2xl:gap-6 p-2">
             <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
             <HeroHeader text={t("contact")} />
-            <p className="text-md w-[80%] text-center">{t("contactText")}</p>
-            <div className="w-full md:max-w-[70%]  p-2 flex flex-col justify-center items-start gap-4">
+            <p className=" text-md w-[80%] text-center">{t("contactText")}</p>
+            <div className=" w-full md:max-w-[70%]  p-2 flex flex-col justify-center items-start gap-4">
                 <div className="w-full flex gap-2 justify-evenly items-center">
-                    <ContactFormElement label={t("email")} type="email" placeholder={t("enterEmail")} icon="at" onChange={handleChange} name="email" errMessage={infosError.email} />
-                    <ContactFormElement label={t("name")} type="text" placeholder={t("enterName")} icon="user" onChange={handleChange} name="name" errMessage={infosError.name} />
+                    <ContactFormElement label={t("email")} type="email" placeholder={t("enterEmail")} icon="at" onChange={handleChange} name="email" errMessage={infosError.email}  value={infos.email}/>
+                    <ContactFormElement label={t("name")} type="text" placeholder={t("enterName")} icon="user" onChange={handleChange} name="name" errMessage={infosError.name}  value={infos.name}/>
                 </div>
                 <div className="w-full gap-1">
-                    <textarea className="p-1 rounded-md outline-none text-black w-full  max-h-[150px]" name="message" id="" cols="20" rows="10" placeholder={t("enterMessage")} onChange={handleChange}></textarea>
+                    <textarea className="p-1 rounded-md outline-none text-black w-full  max-h-[150px]" name="message" id="" cols="20" rows="10" placeholder={t("enterMessage")} onChange={handleChange} value={infos.message}></textarea>
                     <span className={`err before:content-['*'] text-red-300 ${infosError.message === "" ? "hidden" : "block"} `}>{infosError.message}</span>
                 </div>
 
-                <div className="w-full flex justify-end items-center pe-3">
-                    <button ref={sendBtnRef} className="CTA-btn rounded-md border-2 2xl:text-3xl  disabled:cursor-not-allowed disabled:bg-gray-500" type="submit" onClick={send} disabled>{t("send")} <i className="fa-solid fa-paper-plane" ></i></button>
+                <div className="w-full flex justify-end items-center pe-3" onClick={sendEmail}>
+                    <button ref={sendBtnRef} className="CTA-btn rounded-md border-2 2xl:text-3xl  disabled:cursor-not-allowed disabled:bg-gray-500" disabled={isSending}>
+                        {isSending ?
+                            (<> {t("sending")} <i className="fa-solid fa-spinner animate-spin"  ></i></>) :
+                            <> {t("send")} < i className="fa-solid fa-paper-plane" ></i></>}
+                    </button>
                 </div>
-            </div>
+            </div >
             <div className="w-full flex flex-col justify-center items-center gap-2  ">
                 <h2 className="font-bold">{t("contactWithMe")}</h2>
                 <div className="border rounded-full p-2  bg-[var(--background-color)] flex ">
@@ -71,7 +94,7 @@ const Contact = () => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

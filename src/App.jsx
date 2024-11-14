@@ -13,7 +13,7 @@ const App = () => {
       <aside className={`w-fit h-fit  fixed ${currentLanguageCode == "ar" ? " sm:right-5":" sm:left-5"} sm:top-40`}>
         <NavBar />
       </aside>
-      <section className="mt-10 sm:mt-0 sm:ms-20 w-fit px-3">
+      <section className="mt-10 sm:mt-0 sm:ms-20 w-fit md:min-w-[70%] px-3">
         <Outlet />
       </section>
     </main>
