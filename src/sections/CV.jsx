@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import HeroHeader from "../components/heroHeader";
 import PersonalImg from "../components/PersonalImg";
-import DownloadCvButton from './../components/DownloadCvButton';
+import DownloadCvButton from '../components/DownloadCvButton';
 
 const CV = () => {
     const { t } = useTranslation();

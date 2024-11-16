@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import { languages, navItems } from './../constants';
+import { languages, navItems } from '../constants';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
