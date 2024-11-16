@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const DownloadCvButton = () => {
     const { t } = useTranslation();
+    const languague=useSelector(state=>state.language)
 
     const downloadCv = () => {
         const link = document.createElement('a');
-        link.href = `src/assets/Saadia_El_Achguir_CV.pdf`;
-        link.download = 'Saadia_El_Achguir_CV.pdf';
+        link.href = t("cvPath");
+        link.download = `Saadia_El_Achguir_CV_${languague}.pdf`; 
         link.click();
       };
     return (
