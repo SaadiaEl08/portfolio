@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ContactFormElement from "../components/ContactFormElement";
 import HeroHeader from "../components/heroHeader";
 import { contacts } from "../constants";
-import PersonalImg from './../components/PersonalImg';
+import PersonalImg from '../components/PersonalImg';
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
 import { useSelector } from "react-redux";
@@ -17,6 +17,7 @@ const Contact = () => {
     const [infosError, setInfosError] = useState({ name: "", email: "", message: "" });
     const sendBtnRef = useRef();
     const backend_port = useSelector(state => state.BACKEND_PORT);
+    const isDarkTheme=useSelector(state=>state.isDarkTheme)
 
     const handleChange = (e) => {
         setInfos({ ...infos, [e.target.name]: e.target.value });
@@ -53,7 +54,7 @@ const Contact = () => {
                         autoClose: 3000,
                         hideProgressBar: false,
                         closeOnClick: false,
-                        theme: "light",
+                        theme: isDarkTheme? "dark":"light",
                         pauseOnHover: true,
                     });
                 }
@@ -64,7 +65,7 @@ const Contact = () => {
                         autoClose: 3000,
                         hideProgressBar: false,
                         closeOnClick: false,
-                        theme: "light",
+                        theme: isDarkTheme? "dark":"light",
                         pauseOnHover: true,
                     });
                 });
