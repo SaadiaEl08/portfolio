@@ -16,6 +16,7 @@
   --shadow: rgb(166, 148, 255);
   --color: antiquewhite;
   --input-background: rgb(9, 81, 149);
+  --shadow: rgba(166, 148, 255, 0.632);
   --input-text-color: antiquewhite;
   
 }
