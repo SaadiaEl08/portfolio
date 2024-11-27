@@ -17,6 +17,7 @@ const Contact = () => {
     const [infosError, setInfosError] = useState({ name: "", email: "", message: "" });
     const sendBtnRef = useRef();
     const backend_port = useSelector(state => state.BACKEND_PORT);
+    const backend_endpoint = useSelector(state => state.BACKEND_ENDPOINT);
     const isDarkTheme=useSelector(state=>state.isDarkTheme)
 
     const handleChange = (e) => {
@@ -45,7 +46,7 @@ const Contact = () => {
     const sendEmail = async () => {
         try {
             setIsSending(true);
-            await axios.post(`http://localhost:${backend_port}/send_email`, infos)
+            await axios.post(`${backend_endpoint}/send_email`, infos)
                 .then(res => {
                     console.log(res);
                     setInfos({ name: "", email: "", message: "" });

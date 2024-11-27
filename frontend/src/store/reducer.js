@@ -1,5 +1,6 @@
 const initialState = {
     BACKEND_PORT: 5000,
+    BACKEND_ENDPOINT: "https://portfolio-41q5.onrender.com",
     isDarkTheme: localStorage.getItem("isDarkTheme") == true,
     language: localStorage.getItem("language_code") != null ? localStorage.getItem("language_code") : navigator.language == "en" ? "eng" : navigator.language, 
 };
