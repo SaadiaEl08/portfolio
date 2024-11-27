@@ -8,7 +8,7 @@ const DownloadCvButton = () => {
     const downloadCv = () => {
         const link = document.createElement('a');
         link.href = t("cvPath");
-        link.download = `Saadia_El_Achguir_CV_${languag}.pdf`; 
+        link.download = `Saadia_El_Achguir_CV_${language}.pdf`; 
         link.click();
       };
     return (
