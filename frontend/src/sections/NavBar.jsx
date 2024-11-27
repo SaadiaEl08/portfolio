@@ -9,8 +9,6 @@ import { SET_THEME } from '../store/Action';
 
 
 const NavBar = () => {
-  console.log("navbar");
-  console.log("navbar2", languages);
   const { t } = useTranslation();
   const currentLanguageCode = useSelector(state => state.language);
   const [currentLanguage, setCurrentLanguage] = useState(languages.find(language => language.code === currentLanguageCode));
@@ -18,7 +16,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("navbar1", languages);
     setCurrentLanguage(languages.find(language => language.code === currentLanguageCode));
     i18n.changeLanguage(currentLanguageCode);
   }, [currentLanguageCode]);

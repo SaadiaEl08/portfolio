@@ -20,7 +20,6 @@ const Contact = () => {
     const isDarkTheme=useSelector(state=>state.isDarkTheme)
 
     const handleChange = (e) => {
-        console.log("hello from contact")
 
         setInfos({ ...infos, [e.target.name]: e.target.value });
         if (e.target.value === "") {
@@ -49,7 +48,6 @@ const Contact = () => {
             setIsSending(true);
             await axios.post(`${backend_endpoint}/send_email`, infos)
                 .then(res => {
-                    console.log(res);
                     setInfos({ name: "", email: "", message: "" });
                     toast.success(`${t("EmailSentSuccess")}`, {
                         position: "top-right",
@@ -61,7 +59,6 @@ const Contact = () => {
                     });
                 }
                 ).catch(error => {
-                    console.error('Error sending email:', error);
                     toast.error(`${t("EmailNotSent")}`, {
                         position: "top-right",
                         autoClose: 3000,
@@ -73,7 +70,6 @@ const Contact = () => {
                 });
             setIsSending(false);
         } catch (error) {
-            console.error('Error sending email:', error);
             alert('Failed to send email.');
         }
     };

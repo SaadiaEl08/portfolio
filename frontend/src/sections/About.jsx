@@ -21,7 +21,6 @@ const About = () => {
                 <div className='w-full flex gap-2 flex-wrap flex-row justify-center '>
                     {
                         Object.keys(skills).map((key, index) => {
-                            console.log("hello from about")
                             return (
                                 <div key={index} className='p-2  '>
                                     <h4 className='uppercase text-center mb-2  2xl:text-2xl'>{t(key)}</h4>
