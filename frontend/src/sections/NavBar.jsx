@@ -9,13 +9,16 @@ import { SET_THEME } from '../store/Action';
 
 
 const NavBar = () => {
+  console.log("navbar");
+  console.log("navbar2", languages);
   const { t } = useTranslation();
   const currentLanguageCode = useSelector(state => state.language);
   const [currentLanguage, setCurrentLanguage] = useState(languages.find(language => language.code === currentLanguageCode));
   const isDarkTheme = useSelector(state => state.isDarkTheme);
   const dispatch = useDispatch();
-    
+
   useEffect(() => {
+    console.log("navbar1", languages);
     setCurrentLanguage(languages.find(language => language.code === currentLanguageCode));
     i18n.changeLanguage(currentLanguageCode);
   }, [currentLanguageCode]);
@@ -28,7 +31,7 @@ const NavBar = () => {
     dispatch({ type: 'SET_LANGUAGE', payload: newLanguageCode });
   };
   const changeTheme = () => {
-    const newTheme=!isDarkTheme
+    const newTheme = !isDarkTheme;
     localStorage.setItem("isDarkTheme", Number(newTheme));
     dispatch(SET_THEME(newTheme));
   };
@@ -49,7 +52,7 @@ const NavBar = () => {
           <button onClick={changeLanguage} className='flex flex-col justify-center items-center  '>
             <i className={`fa-solid fa-globe w-5 text-center md:w-8 text-lg md:text-2xl  `} />
           </button>
-          <span className=' py-1 px-2 text-sm text-center align-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{currentLanguage.name}</span>
+          <span className=' py-1 px-2 text-sm text-center align-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl'>{currentLanguage ? currentLanguage.name : "English"}</span>
         </li>
         <li className='flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5  md:w-8 overflow-hidden hover:overflow-visible h-8 sm:h-fit'>
           <button onClick={changeTheme} className='flex flex-col justify-center items-center  '>
