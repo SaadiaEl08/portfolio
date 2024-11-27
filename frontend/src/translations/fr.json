@@ -24,21 +24,21 @@
   "enterName": "Entrez votre nom",
   "enterMessage": "Tapez votre message ici...",
   "send": "Envoyer",
-  "contactWithMe": "Vous pouvez également me contacter via",
+  "contactWithMe": "Vous pouvez également me contacter via :",
   "cvText1": "Merci d'être arrivé à ce point dans mon portfolio ! J'apprécie votre intérêt.",
   "cvText2": "N'hésitez pas à télécharger mon CV pour explorer mes compétences et expériences plus en détail.",
-  "note":"Remarque: ",
-  "cvText3":"Le CV sera telechargé en Français, car c'est la langue dans laquelle vous consultez le portfolio actuellement.",
+  "note": "Remarque: ",
+  "cvText3": "Le CV sera telechargé en Français, car c'est la langue dans laquelle vous consultez le portfolio actuellement.",
   "frontEnd": "Front-end",
   "backEnd": "Back-end",
   "databases": "Bases de données",
   "tools": "Outils",
-  "requiredField":"Ce champ est obligatoire 😁",
-  "invalidEmail":"Email non valide 😁",
-  "sending":"Envoi en cours",
-  "EmailSentSuccess":"Email envoyé avec succès, Merci pour votre message 😁",
-  "EmailNotSent":"Email non envoyé,Merci de reessayer ou me contacter 😁",
-  "cvPath": "assets/cvs/Saadia_el_achguir_fr.pdf"
-
-
+  "requiredField": "Ce champ est obligatoire 😁",
+  "invalidEmail": "Email non valide 😁",
+  "sending": "Envoi en cours",
+  "EmailSentSuccess": "Email envoyé avec succès, Merci pour votre message 😁",
+  "EmailNotSent": "Email non envoyé,Merci de reessayer ou me contacter 😁",
+  "cvPath": "assets/cvs/Saadia_el_achguir_fr.pdf",
+  "dark": "Nuit",
+  "light": "Lumineux"
 }

@@ -24,7 +24,7 @@
     "enterName": "Enter your name",
     "enterMessage": "type your message here...",
     "send": "Send",
-    "contactWithMe": "You can also contact me through",
+    "contactWithMe": "You can also contact me through :",
     "cvText1": "Thank you for reaching this point in my portfolio! I appreciate your interest.",
     "cvText2": "Please feel free to download my CV to explore my skills and experiences in more detail.",
     "note":"Note: ",
@@ -38,5 +38,7 @@
     "sending": "sending",
     "EmailSentSuccess": "Email sent successfully, Thank you for your message 😁",
     "EmailNotSent": "Email not sent, please try again 😁",
-    "cvPath": "assets/cvs/Saadia_el_achguir_eng.pdf"
+    "cvPath": "assets/cvs/Saadia_el_achguir_eng.pdf",
+    "dark":"Dark",
+    "light":"Light"
 }
