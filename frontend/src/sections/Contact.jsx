@@ -16,11 +16,12 @@ const Contact = () => {
     const [isSending, setIsSending] = useState(false);
     const [infosError, setInfosError] = useState({ name: "", email: "", message: "" });
     const sendBtnRef = useRef();
-    const backend_port = useSelector(state => state.BACKEND_PORT);
     const backend_endpoint = useSelector(state => state.BACKEND_ENDPOINT);
     const isDarkTheme=useSelector(state=>state.isDarkTheme)
 
     const handleChange = (e) => {
+        console.log("hello from contact")
+
         setInfos({ ...infos, [e.target.name]: e.target.value });
         if (e.target.value === "") {
             sendBtnRef.current.disabled = true;

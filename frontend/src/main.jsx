@@ -10,6 +10,11 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n.js';
 const store = legacy_createStore(reducer);
 
+window.onerror = function (message, source, lineno, colno, error) {
+  console.error("Error caught globally:", message, source, lineno, colno, error);
+};
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
