@@ -1,4 +1,4 @@
-import HeroHeader from '../components/heroHeader';
+import HeroHeader from '../components/HeroHeader';
 import { skills } from '../constants';
 import PersonalImg from './../components/PersonalImg';
 import { useTranslation } from 'react-i18next';
