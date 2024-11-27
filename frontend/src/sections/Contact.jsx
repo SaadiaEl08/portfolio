@@ -107,7 +107,7 @@ const Contact = () => {
                             return (
                                 <div key={index} className=" flex flex-col gap-1 flex-nowrap">
                                     <a href={contact.link} target="_blank" className="p-1 rounded-s-md outline-none text-black w-[89%]">
-                                        <img className="w-10 hover:scale-125 transition-transform duration-700" src={contact.image} alt={contact.name} />
+                                        <img className="w-10 hover:scale-125 transition-transform duration-700" src={contact.image} alt={contact.name}  loading="lazy"/>
                                     </a>
                                 </div>);
                         })

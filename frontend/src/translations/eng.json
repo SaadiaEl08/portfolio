@@ -38,5 +38,5 @@
     "sending": "sending",
     "EmailSentSuccess": "Email sent successfully, Thank you for your message 😁",
     "EmailNotSent": "Email not sent, please try again 😁",
-    "cvPath": "src/assets/cvs/Saadia_el_achguir_eng.pdf"
+    "cvPath": "assets/cvs/Saadia_el_achguir_eng.pdf"
 }

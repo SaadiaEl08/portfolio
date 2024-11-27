@@ -38,7 +38,7 @@
   "sending":"Envoi en cours",
   "EmailSentSuccess":"Email envoyé avec succès, Merci pour votre message 😁",
   "EmailNotSent":"Email non envoyé,Merci de reessayer ou me contacter 😁",
-  "cvPath": "src/assets/cvs/Saadia_el_achguir_fr.pdf"
+  "cvPath": "assets/cvs/Saadia_el_achguir_fr.pdf"
 
 
 }

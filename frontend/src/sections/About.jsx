@@ -27,7 +27,7 @@ const About = () => {
                                     <div className='flex flex-wrap items-center justify-center gap-3 border p-4 bg-[var(--background-color)] rounded-full  ' >
                                         {skills[key].map((skill, index) => {
                                             return (
-                                                <img src={skill.Image} alt={skill.name} title={t(skill.name)} key={index} className='w-8 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16  ' />
+                                                <img src={skill.Image} alt={skill.name} title={t(skill.name)} key={index} className='w-8 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16  '   loading="lazy"/>
                                             );
 
                                         })}
