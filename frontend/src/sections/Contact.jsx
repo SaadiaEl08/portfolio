@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ContactFormElement from "../components/ContactFormElement";
-import HeroHeader from "../components/heroHeader";
+import HeroHeader from "../components/HeroHeader";
 import { contacts } from "../constants";
 import PersonalImg from '../components/PersonalImg';
 import { useTranslation } from "react-i18next";
