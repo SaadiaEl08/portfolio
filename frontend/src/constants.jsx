@@ -29,6 +29,7 @@ export const navItems = [
         path: "/cv",
         icon: "fa-solid fa-file"
     }
+
 ];
 
 export const skills = {

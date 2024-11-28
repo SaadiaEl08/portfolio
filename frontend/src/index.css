@@ -4,6 +4,7 @@
 
 :root {
   --background-color: rgb(8, 104, 196);
+  --background-color-hover: rgb(29, 77, 123);
   --shadow: rgb(166, 148, 255);
   --color: antiquewhite;
   --input-background: #fff;
@@ -13,6 +14,7 @@
 /* Dark theme overrides */
 [data-theme="dark"] {
   --background-color: rgb(8, 56, 102);
+  --background-color-hover: rgb(29, 77, 123);
   --shadow: rgb(166, 148, 255);
   --color: antiquewhite;
   --input-background: rgb(9, 81, 149);
