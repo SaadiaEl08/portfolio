@@ -69,7 +69,7 @@ const NavBar = () => {
             <i className={`fa-solid fa-globe w-1 text-center   text-lg md:text-2xl language-button `} />
             <span className='text-xs text-center align-center font-bold language-button text-black'>{currentLanguage.code.toUpperCase()}</span>
           </button>
-          <ul className={`gap-1 ${showLanguagesDropdown ? "flex" : "hidden" } absolute top-12 sm:top-4 sm:left-10 flex-col  justify-center items-center border-2 rounded-md bg-[var(--background-color)]`}>
+          <ul className={`gap-1 ${showLanguagesDropdown ? "flex" : "hidden" } absolute top-12 sm:top-4  ${currentLanguageCode=="ar"?" sm:-left-28" :"sm:left-10"} flex-col  justify-center items-center border-2 rounded-md bg-[var(--background-color)]`}>
             {
               languages.map((language, index) => {
                 return (
