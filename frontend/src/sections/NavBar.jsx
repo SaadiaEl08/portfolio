@@ -72,7 +72,7 @@ const NavBar = () => {
             {
               languages.map((language, index) => {
                 return (
-                  <li key={index} onClick={() => changeLanguage(language.code)} className={`w-full rounded-md cursor-pointer py-1 px-2 text-sm text-center align-center font-semibold ${currentLanguage.code == language.code ? "bg-[var(--background-color-hover)]" : ""}   hover:bg-[var(--background-color-hover)]  md:text-xl`}>{language.name}</li>
+                  <li key={index} onClick={() => changeLanguage(language.code)} className={`w-full rounded-md cursor-pointer py-1 px-2 text-sm text-center align-center font-semibold ${currentLanguage?.code == language.code ? "bg-[var(--background-color-hover)]" : ""}   hover:bg-[var(--background-color-hover)]  md:text-xl`}>{language.name}</li>
                 );
               })
             }
