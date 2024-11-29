@@ -66,7 +66,7 @@ const NavBar = () => {
         <li className='relative flex  flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5  md:w-8 h-8 sm:h-fit '>
           <button className='w-full  flex flex-row justify-center items-center language-button' onClick={toggleLanguagesDropdown} >
             <i className={`fa-solid fa-globe w-1 text-center   text-lg md:text-2xl language-button `} />
-            <span className='text-xs text-center align-center font-bold language-button text-black'>{currentLanguage.code?.toUpperCase()}</span>
+            <span className='text-xs text-center align-center font-bold language-button text-black'>{currentLanguage?.code?.toUpperCase()}</span>
           </button>
           <ul className={`gap-1 ${showLanguagesDropdown ? "flex" : "hidden"} absolute top-12 sm:top-4  ${currentLanguageCode == "ar" ? " sm:-left-28" : "sm:left-10"} flex-col  justify-center items-center border-2 rounded-md bg-[var(--background-color)]`}>
             {
