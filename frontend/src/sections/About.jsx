@@ -16,14 +16,14 @@ const About = () => {
                 <br /> 
                 {t("about3")}
             </p>
-            <div className='flex item-center justify-center flex-col gap-4'>
+            <div className='flex item-center justify-center flex-col gap-1'>
                 <HeroHeader text={t("skills")} />
                 <div className='w-full flex gap-2 flex-wrap flex-row justify-center'>
                     {
                         Object.keys(skills).map((key, index) => {
                             return (
                                 <div key={index} className='p-2  '>
-                                    <h4 className='uppercase text-center mb-2  2xl:text-2xl'>{t(key)}</h4>
+                                    <h4 className=' text-center mb-2  2xl:text-2xl'>{t(key)}</h4>
                                     <div className='flex flex-wrap items-center justify-center gap-3 border p-4 bg-[var(--background-color)] rounded-full animation-scale ' >
                                         {skills[key].map((skill, index) => {
                                             return (
