@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import engTranslation from './translations/eng.json';
+import enTranslation from './translations/en.json';
 import arTranslation from './translations/ar.json';
 import frTranslation from './translations/fr.json';
 import reducer from './store/reducer';
@@ -11,12 +11,12 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      eng: { translation: engTranslation },
+      en: { translation: enTranslation },
       ar: { translation: arTranslation },
       fr: { translation: frTranslation }
     },
     lng: store.getState().language,
-    fallbackLng: 'eng',
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false
     },

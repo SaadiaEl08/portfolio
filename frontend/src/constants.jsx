@@ -94,7 +94,7 @@ export const contacts = [
 export const languages = [
     {
         id: 1,
-        code: "eng",
+        code: "en",
         name: "English",
     },
     {

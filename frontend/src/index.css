@@ -13,7 +13,7 @@
 
 /* Dark theme overrides */
 [data-theme="dark"] {
-  --background-color: rgb(8, 56, 102);
+  --background-color: rgb(7, 26, 44);
   --background-color-hover: rgb(29, 77, 123);
   --shadow: rgb(166, 148, 255);
   --color: antiquewhite;
@@ -66,6 +66,42 @@ body {
   filter: drop-shadow(0 0 0.75rem rgb(166, 148, 255));
 }
 
+.animation-fade-in{
+  animation: fade-in .5s ease-in-out  forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+  
+}
+
+.animation-scale{
+  animation: scale .5s ease-in-out  forwards;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+  
+}
+
+.skill-icon {
+  transition: 0.3s ease-in-out; 
+}
+
+.skill-icon:hover {
+  transform: translateY(-20%); 
+}
+ 
 @layer components {
   .CTA-btn {
     background-color: var(--background-color);

@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="h-fit min-w-screen flex flex-col justify-center items-center px-2 sm:h-screen lg:text-xl">
+    <div className="h-fit min-w-screen flex flex-col justify-center items-center px-2 sm:h-screen lg:text-xl animation-fade-in">
       <div className="flex flex-col justify-center items-center gap-6">
         <PersonalImg className="md:w-[250px] lg:w-[250px] xl:w-[200px] 2xl:w-[400px]"/>
         <div className="flex flex-col justify-center items-center max-w-[80%] gap-4">
