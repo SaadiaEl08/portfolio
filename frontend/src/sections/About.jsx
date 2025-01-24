@@ -6,7 +6,7 @@ const About = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="min-w-screen flex flex-col justify-center items-center gap-2 pt-2 sm:min-h-screen md:text-lg 2xl:gap-6 animation-fade-in">
+        <div id="about" className="min-w-screen flex flex-col justify-center items-center gap-2 pt-2 sm:min-h-screen md:text-lg 2xl:gap-6 animation-fade-in">
             <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
             <HeroHeader text={t("about")} />
             <p className='text-base text-center  text-slate-200 2xl:text-2xl'> 
@@ -42,4 +42,4 @@ const About = () => {
     );
 };
 
-export default About;;
+export default About;

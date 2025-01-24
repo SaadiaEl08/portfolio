@@ -50,16 +50,15 @@ const NavBar = () => {
     setShowLanguagesDropdown((prevState) => !prevState);
 
   };
-  const currentPage = useLocation().pathname;
   return (
     <nav className="border-2 rounded-full bg-[var(--background-color)] w-fit h-fit flex flex-col justify-center items-center p-1">
       <ul className="flex sm:flex-col gap-2 justify-evenly items-center w-72 sm:w-fit sm:px-1 md:h-[320px] md:p-0">
         {navItems.map((item) => (
           <li key={item.id} className='navItem flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5  md:w-8 overflow-hidden hover:overflow-visible h-8 sm:h-fit'>
-            <Link to={item.path} className='flex flex-col justify-center items-center  '>
+            <a href={`#${item.title.toLowerCase()}`} className='flex flex-col justify-center items-center  '>
               <i className={`${item.icon} w-5 text-center md:w-8 text-lg md:text-2xl  `} />
-              {currentPage == item.path ? <span className='w-5 border bg-white md:w-6 md:border-1'></span> : ''}
-            </Link>
+              <span className='w-5 border bg-white md:w-6 md:border-1'></span>
+            </a>
             <span className='py-1 px-2 text-sm text-center text-nowrap font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl '>{t(item.title.toLowerCase())}</span>
           </li>
         ))}
