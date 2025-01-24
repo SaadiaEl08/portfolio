@@ -1,5 +1,4 @@
-import { Outlet } from 'react-router-dom';
-import NavBar from './sections/NavBar';
+import { CV, Contact, NavBar, About, Home } from "./sections";
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 const App = () => {
@@ -19,7 +18,10 @@ const App = () => {
         <NavBar />
       </aside>
       <section className="mt-10 sm:mt-0 sm:ms-20 w-fit md:min-w-[70%] px-3">
-        <Outlet />
+        <Home/>
+        <About />
+        <CV />
+        <Contact />
       </section>
     </main>
   );
