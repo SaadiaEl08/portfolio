@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <main data-theme={isDarkTheme ? "dark" : "light"} className="min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-center justify-between items-center pt-4  sm:pt-0 text-[var(--color)]">
-      <aside className={`w-fit h-fit  fixed ${currentLanguageCode == "ar" ? " sm:right-5" : " sm:left-5"} sm:top-40 z-10`}>
+      <aside className={`w-fit h-fit fixed ${currentLanguageCode == "ar" ? " sm:right-5" : " sm:left-5"} sm:top-40 z-10`}>
         <NavBar />
       </aside>
       <section className="mt-10 sm:mt-0 sm:ms-20 w-fit md:min-w-[70%] px-3">
