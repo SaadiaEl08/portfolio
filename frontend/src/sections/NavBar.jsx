@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import { SET_THEME } from "../store/Action";
 
-const NavBar = ({ sections,className }) => {
+const NavBar = ({ sections, className }) => {
   const { t } = useTranslation();
 
   // Redux states
@@ -60,6 +60,7 @@ const NavBar = ({ sections,className }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setCurrentSection(entry.target.getAttribute("id"));
+            return;
           }
         });
       },
@@ -86,7 +87,9 @@ const NavBar = ({ sections,className }) => {
   };
 
   return (
-    <nav className={`sm:shadow-none border-2 rounded-full bg-[var(--background-color)] w-fit h-fit flex flex-col justify-center items-center p-1 ${className}`}>
+    <nav
+      className={`sm:shadow-none border-2 rounded-full bg-[var(--background-color)] w-fit h-fit flex flex-col justify-center items-center p-1 ${className}`}
+    >
       <ul className="flex sm:flex-col gap-2 justify-evenly items-center w-72 sm:w-fit sm:px-1 md:h-[320px] md:p-0">
         {/* Navigation items */}
         {navItems.map((item) => (

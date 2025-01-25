@@ -79,7 +79,7 @@ const Contact = forwardRef((props,ref) => {
     <div
       ref={ref}
       id="contact"
-      className="snap-start flex flex-col justify-center items-center gap-1 sm:min-h-screen md:text-lg 2xl:gap-6 sm:p-2 pt-16 animation-fade-in"
+      className="in-view snap-start flex flex-col justify-center items-center gap-1 sm:min-h-screen md:text-lg 2xl:gap-6 sm:p-2 pt-16 animation-fade-in"
     >
       <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
       <HeroHeader text={t("contact")} />
