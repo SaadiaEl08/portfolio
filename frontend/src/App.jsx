@@ -49,9 +49,9 @@ const App = () => {
             scrollY >= 10 ? "shadow-[0_0px_90px_7px_rgba(0,0,0,0.9)]" : " "
           }
           `}
-         
         />
       </aside>
+
       <section className="sm:mt-0 sm:ms-20 w-fit md:min-w-[70%] px-3 snap-y snap-mandatory">
         <Home ref={homeRef} />
         <About ref={aboutRef} />
@@ -71,6 +71,8 @@ const App = () => {
           </div>
         )
       }
+      <div className="fixed w-1/2 h-screen top-0 left-0 bg-[var(--background-color)] z-10 openToRight "></div>
+      <div className="fixed w-1/2 h-screen top-0 right-0 bg-[var(--background-color)]  z-10 openToLeft "></div>
     </main>
   );
 };

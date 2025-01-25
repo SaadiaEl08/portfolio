@@ -20,13 +20,12 @@
   --input-background: rgb(9, 81, 149);
   --shadow: rgba(166, 148, 255, 0.632);
   --input-text-color: antiquewhite;
-  
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Lato,"sans-serf";
+  font-family: Lato, "sans-serf";
   scroll-behavior: smooth;
 }
 
@@ -46,8 +45,12 @@ li {
   z-index: -100;
 }
 body {
-  background: rgb(73, 2, 88) ;
-  background: radial-gradient(circle, var(--background-color) 0%, rgb(5, 41, 74) 100%);
+  background: rgb(73, 2, 88);
+  background: radial-gradient(
+    circle,
+    var(--background-color) 0%,
+    rgb(5, 41, 74) 100%
+  );
 }
 
 .animate-wave {
@@ -67,42 +70,40 @@ body {
   filter: drop-shadow(0 0 0.75rem rgb(166, 148, 255));
 }
 
-.animation-fade-in{
-  animation: fade-in .5s ease-in-out  forwards;
+.animation-fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
-  
 }
 
-.animation-scale{
-  animation: scale .5s ease-in-out  forwards;
+.animation-scale {
+  animation: scale 0.5s ease-in-out forwards;
 }
 
 @keyframes scale {
   from {
     transform: scale(0);
   }
-  to{
+  to {
     transform: scale(1);
   }
-  
 }
 
 .skill-icon {
-  transition: 0.3s ease-in-out; 
+  transition: 0.3s ease-in-out;
 }
 
 .skill-icon:hover {
-  transform: translateY(-20%); 
+  transform: translateY(-20%);
 }
- 
+
 @layer components {
   .CTA-btn {
     background-color: var(--background-color);
@@ -117,5 +118,27 @@ body {
   .CTA-btn:disabled {
     transform: none;
     box-shadow: none;
+  }
+}
+.openToRight {
+  animation: openToRight 0.7s ease-in-out forwards;
+}
+@keyframes openToRight {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.openToLeft {
+  animation: openToLeft 0.7s ease-in-out forwards;
+}
+@keyframes openToLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
