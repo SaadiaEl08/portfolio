@@ -154,7 +154,7 @@ const Contact = forwardRef((props,ref) => {
       </div>
       <div className="w-full flex flex-col justify-center items-center gap-2  ">
         <h2 className="font-bold">{t("contactWithMe")}</h2>
-        <div className="border rounded-full p-2  bg-[var(--background-color)] flex ">
+        <div className="border rounded-full p-2  bg-[var(--background-color)] flex">
           {contacts.map((contact, index) => {
             return (
               <div key={index} className=" flex flex-col gap-1 flex-nowrap">
