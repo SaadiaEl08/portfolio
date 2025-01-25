@@ -143,13 +143,13 @@ body {
   }
 }
 
-.in-view{
-  animation: in-view  linear forwards;
+.in-view {
+  animation: in-view linear forwards;
   animation-timeline: view();
-  animation-range-start:10px ;
-  animation-range-end:500px ;
+  animation-range-start: 10px;
+  animation-range-end: 500px;
   opacity: 0;
-    scale: 0.8;
+  scale: 0.8;
 }
 @keyframes in-view {
   
