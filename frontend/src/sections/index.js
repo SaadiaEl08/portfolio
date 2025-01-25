@@ -1,8 +1,8 @@
 import About from "./About";
 import Home from "./Home";
 import Contact from "./Contact";
-import Cv from "./Resume";
+import Resume from "./Resume";
 import NavBar from "./NavBar";
 
 
-export { Cv, Contact, NavBar, About, Home };
+export { Resume, Contact, NavBar, About, Home };
