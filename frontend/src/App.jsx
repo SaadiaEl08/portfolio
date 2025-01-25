@@ -1,4 +1,4 @@
-import { Cv, Contact, NavBar, About, Home } from "./sections";
+import { Resume, Contact, NavBar, About, Home } from "./sections";
 import { useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 const App = () => {
@@ -55,7 +55,7 @@ const App = () => {
       <section className="sm:mt-0 sm:ms-20 w-fit md:min-w-[70%] px-3 snap-y snap-mandatory">
         <Home ref={homeRef} />
         <About ref={aboutRef} />
-        <Cv ref={cvRef} />
+        <Resume ref={cvRef} />
         <Contact ref={contactRef} />
       </section>
       {

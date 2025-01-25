@@ -4,7 +4,7 @@ import PersonalImg from "../components/PersonalImg";
 import DownloadCvButton from "../components/DownloadCvButton";
 import { forwardRef } from "react";
 
-const Cv = forwardRef((props,ref) => {
+const Resume = forwardRef((props,ref) => {
   const { t } = useTranslation();
 
   return (
@@ -26,6 +26,6 @@ const Cv = forwardRef((props,ref) => {
     </div>
   );
 });
-Cv.displayName = "CV";
+Resume.displayName = "Resume";
 
-export default Cv;
+export default Resume;
