@@ -1,5 +1,5 @@
 import { languages, navItems } from "../constants";
-import { useEffect, useRef, useState } from "react";
+import { cloneElement, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
@@ -76,11 +76,11 @@ const NavBar = ({ sections, className }) => {
   }, [sections]);
 
   // Scroll to specific section
-  const scrollToComponent = (component) => {
+  const scrollToComponent = (component, e) => {
     // Scroll the component into view
     component.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
     });
     // Adjust the scroll position after scrolling into view
     setCurrentSection(component.id);
@@ -95,12 +95,13 @@ const NavBar = ({ sections, className }) => {
         {navItems.map((item) => (
           <li
             key={item.id}
-            className="navItem flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5 md:w-8 overflow-hidden hover:overflow-visible h-8 sm:h-fit"
+            className="navItem flex flex-col sm:flex-row gap-6 sm:gap-4 justify-start items-center w-5 md:w-8 overflow-hidden  hover:overflow-visible h-8 sm:h-fit"
           >
             <a
-              onClick={() =>
+              onClick={(e) =>
                 scrollToComponent(
-                  document.getElementById(item.title.toLowerCase())
+                  document.getElementById(item.title.toLowerCase()),
+                  e
                 )
               }
               className="flex flex-col justify-center items-center cursor-pointer"
@@ -112,7 +113,7 @@ const NavBar = ({ sections, className }) => {
                 <span className="w-5 border bg-white md:w-6 md:border-1"></span>
               )}
             </a>
-            <span className="py-1 px-2 text-sm text-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl">
+            <span className="py-1 px-2 text-sm text-nowrap text-center font-semibold border-2 rounded-full bg-[var(--background-color)] md:text-xl">
               {t(item.title.toLowerCase())}
             </span>
           </li>
