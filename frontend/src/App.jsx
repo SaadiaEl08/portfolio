@@ -1,4 +1,4 @@
-import { Resume, Contact, NavBar, About, Home } from "./sections";
+import { Resume, Contact, NavBar, About, Home,Projects } from "./sections";
 import { useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 
@@ -17,8 +17,9 @@ const App = () => {
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const cvRef = useRef(null);
+  const projects = useRef(null);
 
-  const sections = useRef([homeRef, aboutRef, contactRef, cvRef]);
+  const sections = useRef([homeRef, aboutRef, contactRef, cvRef, projects]);
 
   // State to track scroll position
   const [scrollY, setScrollY] = useState(0);
@@ -65,6 +66,7 @@ const App = () => {
       <section className="sm:mt-0 sm:ms-20 w-fit md:min-w-[70%] px-3 snap-y snap-mandatory">
         <Home ref={homeRef} />
         <About ref={aboutRef} />
+        <Projects ref={projects}/>
         <Resume ref={cvRef} />
         <Contact ref={contactRef} />
       </section>
