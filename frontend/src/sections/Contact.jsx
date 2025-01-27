@@ -81,10 +81,10 @@ const Contact = forwardRef((props,ref) => {
       id="contact"
       className="in-view snap-start flex flex-col justify-center items-center gap-1 sm:min-h-screen md:text-lg 2xl:gap-6 sm:p-2 pt-16 animation-fade-in"
     >
-      <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
+      <PersonalImg className="w-[70px]" />
       <HeroHeader text={t("contact")} />
       <p className=" text-md w-[80%] text-center">{t("contactText")}</p>
-      <div className=" w-full md:max-w-[70%]  p-2 flex flex-col justify-center items-start gap-4">
+      <div className=" w-full md:max-w-[70%]  p-1 flex flex-col justify-center items-start gap-2">
         <div className="w-full flex gap-2 justify-evenly items-center">
           <ContactFormElement
             label={t("email")}
@@ -164,7 +164,7 @@ const Contact = forwardRef((props,ref) => {
                   className="p-1 rounded-s-md outline-none text-black w-[89%]"
                 >
                   <img
-                    className="w-10 hover:scale-125 transition-transform duration-700"
+                    className="w-8 hover:scale-125 transition-transform duration-700"
                     src={contact.image}
                     alt={contact.name}
                     loading="lazy"
