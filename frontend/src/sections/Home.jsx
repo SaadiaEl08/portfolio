@@ -60,7 +60,7 @@ const Home = forwardRef((props, ref) => {
           <DownloadCvButton />
           <button className="CTA-btn border-2 2xl:text-3xl">
             <a href="#contact">
-              {t("contact")} <i className="fa-solid fa-smile "></i>
+              {t("contact")} 😊 
             </a>
           </button>
         </div>
