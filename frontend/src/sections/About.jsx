@@ -1,4 +1,4 @@
-import { forwardRef, useEffect } from "react";
+import { forwardRef} from "react";
 import HeroHeader from "../components/HeroHeader";
 import { skills } from "../constants";
 import PersonalImg from "./../components/PersonalImg";
@@ -11,7 +11,7 @@ const About = forwardRef((props, ref) => {
       id="about"
       className="in-view snap-start pt-16 sm:pt-3 min-w-screen flex flex-col justify-center items-center gap-2 sm:min-h-screen md:text-lg 2xl:gap-6 animation-fade-in"
     >
-      <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[150px] 2xl:w-[300px] " />
+      <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[100px]  " />
       <HeroHeader text={t("about")} />
       <p className="text-base text-center  text-slate-200 2xl:text-2xl">
         {t("about1")}
@@ -27,7 +27,7 @@ const About = forwardRef((props, ref) => {
             return (
               <div key={index} className="p-2  ">
                 <h4 className=" text-center mb-2  2xl:text-2xl">{t(key)}</h4>
-                <div className="flex flex-wrap items-center justify-center gap-3 border p-4 bg-[var(--background-color)] rounded-full animation-scale ">
+                <div className="flex flex-wrap items-center justify-center gap-3 border p-2 bg-[var(--background-color)] rounded-full animation-scale ">
                   {skills[key].map((skill, index) => {
                     return (
                       <img
@@ -35,7 +35,7 @@ const About = forwardRef((props, ref) => {
                         alt={skill.name}
                         title={t(skill.name)}
                         key={index}
-                        className="w-8 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16 border skill-icon"
+                        className="w-6 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16 border skill-icon"
                         loading="lazy"
                       />
                     );
