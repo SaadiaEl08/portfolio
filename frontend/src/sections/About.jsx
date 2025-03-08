@@ -35,7 +35,7 @@ const About = forwardRef((props, ref) => {
                         alt={skill.name}
                         title={t(skill.name)}
                         key={index}
-                        className="w-6 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16 border skill-icon"
+                        className="w-8 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16 border skill-icon"
                         loading="lazy"
                       />
                     );
