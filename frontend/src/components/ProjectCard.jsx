@@ -5,18 +5,19 @@ const ProjectCard = ({ project }) => {
   return (
     <div
       key={project.id}
-      className="border rounded-lg  bg-[var(--background-color)] flex flex-col gap-2 p-2 animation-scale"
+      className="border rounded-lg  bg-[var(--background-color)] flex flex-col gap-2 p-2 animation-scale "
     >
-      <h2 className="border rounded-full px-6 text-center w-fit text-xl font-bold mx-auto">
-          {project.title}
+      <h2 className="border rounded-full px-6 py-2 gap-1 text-center w-fit text-xl font-bold mx-auto flex ">
+        <img src={project.logo} alt="" className="w-8 rounded" />
+        {project.title}
       </h2>
-      <div className="flex flex-col gap-2 p-2 ">
+      <div className="flex flex-col gap-2 p-2 md:flex-row md:gap-4 lg:p-4 ">
         <img
           src={project.image}
           alt={project.title}
-          className="object-contain w-96 aspect-video"
+          className="object-fill w-full border md:w-[50%]  aspect-[16/9] "
         />
-        <div className="gap-4 flex flex-col">
+        <div className="gap-4 flex flex-col md:w-1/2">
           <p className="text-base first-letter:capitalize">
             {project.description?.length > 200
               ? project.description.slice(0, 200)
@@ -82,25 +83,26 @@ const ProjectCard = ({ project }) => {
               <img src="assets/contact/github.png" alt="" className="w-8" />
             </a>{" "}
           </p>
-          <h1>To build this project I used:</h1>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 border-2 w-fit p-2  bg-[var(--background-color)] rounded-full  ">
-            {project.technologies.map((technology) => {
-              return (
-                <div key={technology.name} className="flex items-center ">
-                  <img
-                    src={technology.image}
-                    alt={technology.name}
-                    className="w-6 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16 border skill-icon"
-                    loading="lazy"
-                  />
-                  <img />
-                  <span key={technology.name} className="text-sm p-1 rounded">
-                    {technology.name}
-                  </span>
-                </div>
-              );
-            })}
+          <div className="flex flex-wrap gap-2 justify-center items-center">
+            <h1>To build this project I used:</h1>
+            <div className="flex flex-wrap items-center justify-center gap-3 border-2 w-fit p-2  bg-[var(--background-color)] rounded-full  ">
+              {project.technologies.map((technology) => {
+                return (
+                  <div key={technology.name} className="flex items-center ">
+                    <img
+                      src={technology.image}
+                      alt={technology.name}
+                      className="w-6 rounded-full bg-slate-100 p-1 lg:w-10 2xl:w-16 border skill-icon"
+                      loading="lazy"
+                    />
+                    <img />
+                    <span key={technology.name} className="text-sm p-1 rounded">
+                      {technology.name}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
