@@ -1,8 +1,9 @@
-import { forwardRef} from "react";
+import { forwardRef } from "react";
 import HeroHeader from "../components/HeroHeader";
-import { skills } from "../constants";
 import PersonalImg from "./../components/PersonalImg";
 import { useTranslation } from "react-i18next";
+import { projects } from "../constants";
+import ProjectCard from "../components/ProjectCard";
 const Projects = forwardRef((props, ref) => {
   const { t } = useTranslation();
   return (
@@ -13,12 +14,13 @@ const Projects = forwardRef((props, ref) => {
     >
       <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[100px]  " />
       <HeroHeader text={t("projects")} />
-      <div className="flex item-center justify-center flex-col gap-1">
-       to be added
+      <div className="border w-full flex flex-wrap item-center justify-center  gap-1">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
     </div>
   );
 });
 Projects.displayName = "Projects";
-
 export default Projects;
