@@ -107,3 +107,14 @@ export const languages = [
     name: "French",
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Project 1",
+    description: "Description of Project 1",
+    image: "assets/contact/github.png",
+    link: " ",
+    technologies: ["HTML", "CSS", "Javascript"],
+  },
+];
