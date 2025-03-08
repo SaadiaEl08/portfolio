@@ -47,6 +47,7 @@ export const skills = {
     { name: "laravel", image: "assets/skills/laravel.png" },
     { name: "Python", image: "assets/skills/python.png" },
     { name: "PHP", image: "assets/skills/php.png" },
+    { name: "Strapi", image: "assets/skills/strapi.png" },
   ],
   databases: [
     { name: "MongoDB", image: "assets/skills/mongodb.png" },
@@ -114,7 +115,27 @@ export const projects = [
     title: "Project 1",
     description: "Description of Project 1",
     image: "assets/contact/github.png",
-    link: " ",
-    technologies: ["HTML", "CSS", "Javascript"],
+    link: "https://uptodo-saadia-el-achguir.vercel.app",
+    github: "https://uptodo-saadia-el-achguir.vercel.app",
+    technologies: [
+      skills.frontEnd.find((skill) => skill.name.toLowerCase() === "react"),
+      skills.backEnd.find((skill) => skill.name.toLowerCase() === "strapi"),
+      skills.databases.find((skill) => skill.name.toLowerCase() === "mysql"),
+    ],
+    note: "Only the front end is deployed on vercel and you can see the app an try the functionalities from it ,the backend works on localhost but you still can see the code on github",
+  },
+  {
+    id: 2,
+    title: "UpToDo",
+    description: "this website is a to do list app to manage your tasks and your time ,you can add a task, delete it, mark it as done or undone, and you can also filter the tasks by their status or by their name also it provides a calendar to see the tasks by date ,in addition to that you can see the tasks by their priority and you can also use a timer to manage your time and see the time you spent on each task all that inside one app  ",
+    image: "assets/contact/github.png",
+    link: "https://uptodo-saadia-el-achguir.vercel.app",
+    github: "https://github.com/SaadiaEl08/to-do-list",
+    technologies: [
+      skills.frontEnd.find((skill) => skill.name.toLowerCase() === "react"),
+      skills.backEnd.find((skill) => skill.name.toLowerCase() === "strapi"),
+      skills.databases.find((skill) => skill.name.toLowerCase() === "mysql"),
+    ],
+    note: "Only the front end is deployed on vercel and you can see the app an try the functionalities from it ,the backend works on localhost but you still can see the code on github",
   },
 ];
