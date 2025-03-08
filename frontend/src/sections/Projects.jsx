@@ -14,7 +14,7 @@ const Projects = forwardRef((props, ref) => {
     >
       <PersonalImg className="w-[70px] md:w-[150px] lg:w-[100px] xl:w-[100px]  " />
       <HeroHeader text={t("projects")} />
-      <div className="border w-full flex flex-wrap item-center justify-center  gap-1">
+      <div className="border w-full flex flex-col flex-wrap item-center justify-center  gap-1">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
